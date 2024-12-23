@@ -28,8 +28,10 @@ public class SettingController {
 
     // FXML Fields
     
-    @FXML private ComboBox<String> alarmSoundComboBox;
-    @FXML private ComboBox<Integer> intervalsComboBox;
+    @FXML
+    public ComboBox<String> alarmSoundComboBox;
+    @FXML
+    public ComboBox<Integer> intervalsComboBox;
     @FXML private ComboBox<String> focusTimeComboBox;
     @FXML private ComboBox<String> shortBreakComboBox;
     @FXML private ComboBox<String> longBreakComboBox;
@@ -59,7 +61,7 @@ public class SettingController {
 
     }
       @FXML
-    private void handleHomeButton() {
+    public void handleHomeButton() {
         loadView("AppUsage.fxml");
     }
 

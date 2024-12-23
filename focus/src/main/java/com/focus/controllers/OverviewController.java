@@ -29,19 +29,19 @@ public class OverviewController {
     private Button settingsButton;
 
     @FXML
-    private Button dayButton;
+    public Button dayButton;
 
     @FXML
-    private Button weekButton;
+    public Button weekButton;
 
     @FXML
-    private Button monthButton;
+    public Button monthButton;
 
     @FXML
-    private Button yearButton;
+    public Button yearButton;
 
     @FXML
-    private BarChart<String, Number> timeDistributionChart;
+    public BarChart<String, Number> timeDistributionChart;
 
     @FXML
     private CategoryAxis daysAxis;
@@ -50,7 +50,7 @@ public class OverviewController {
     private NumberAxis timeAxis;
 
     @FXML
-    private void initialize() {
+    public void initialize() {
         // Link chart buttons to data-loading methods
         dayButton.setOnAction(event -> loadDayData());
         weekButton.setOnAction(event -> loadWeeklyData());

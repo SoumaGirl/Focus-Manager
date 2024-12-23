@@ -2,7 +2,6 @@ package com.focus.view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -14,11 +13,9 @@ public class Setting extends Application {
         primaryStage.setTitle("Setting");
         primaryStage.setScene(scene);
         primaryStage.show();
-
         Stage stage = primaryStage;
         stage.setMinWidth(1024);  // Minimum width
         stage.setMinHeight(768); // Minimum height
-        
 
     }
 

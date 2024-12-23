@@ -31,7 +31,7 @@ public class FocusAppController {
 
 
     @FXML
-    private Label timerLabel;
+    public Label timerLabel;
 
     @FXML
     private Label startTimeLabel;
@@ -40,10 +40,10 @@ public class FocusAppController {
     private Label endTimeLabel;
 
     @FXML
-    private Button startButton;
+    public Button startButton;
 
     @FXML
-    private Button stopButton;
+    public Button stopButton;
 
     private Timeline timeline;
     private int secondsElapsed = 0;

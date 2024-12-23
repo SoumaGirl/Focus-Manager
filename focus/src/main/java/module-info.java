@@ -2,6 +2,7 @@ module com {
     requires javafx.controls;
     requires javafx.fxml;
     requires transitive javafx.graphics;
+    
 
     exports com.focus.view;
     exports com.focus.controllers;
