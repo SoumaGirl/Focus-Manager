@@ -5,6 +5,14 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.focus.controllers.SettingController">
+    
+    <!-- Top Section -->
+    <top>
+        <HBox spacing="20" style="-fx-padding: 10; -fx-background-color: #dce1f2;">
+            <Label text="Settings" style="-fx-font-size: 25px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+        </HBox>
+    </top>
     <!-- Left Sidebar -->
     <left>
         <VBox spacing="10" style="-fx-background-color: #b3cbe4; -fx-padding: 10;">
