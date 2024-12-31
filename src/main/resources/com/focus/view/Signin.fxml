@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.focus.controllers.SigninController" prefHeight="400" prefWidth="600">
+    <children>
+       
+        <Text text="Sign in" layoutX="250" layoutY="50" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+        
+        
+        <Text text="Enter email" layoutX="100" layoutY="120" />
+        <TextField fx:id="emailField" layoutX="100" layoutY="140" prefWidth="400" />
+
+        <!-- Password Label -->
+        <Text text="Enter password" layoutX="100" layoutY="180" />
+        <PasswordField fx:id="passwordField" layoutX="100" layoutY="200" prefWidth="400" />
+
+        <!-- Sign In Button -->
+        <Button text="Sign In" fx:id="signInButton" layoutX="250" layoutY="250" onAction="#handleSignInClick" prefWidth="100" />
+
+        <!-- Forget password and Sign Up Links -->
+       
+        <Text text="Don't have an account? Sign Up" layoutX="100" layoutY="340" style="-fx-font-size: 12; -fx-fill: blue; cursor: hand;" />
+
+        
+    </children>
+</AnchorPane>

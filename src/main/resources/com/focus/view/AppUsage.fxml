@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.focus.controllers.AppUsageController" spacing="10">
+   
+    <HBox spacing="10" style="-fx-background-color: #f0f8ff; -fx-padding: 10;" alignment="CENTER_LEFT">
+        <Label text="Nov 01 - Nov 18" style="-fx-font-size: 16;" />
+        <Button text="Apps" style="-fx-background-color: #add8e6; -fx-text-fill: black;" />
+        <Region fx:id="spacer" HBox.hgrow="ALWAYS" />
+        <Button text="Suivant" style="-fx-background-color: #008cba; -fx-text-fill: white;" />
+    </HBox>
+
+    <!-- Main Layout -->
+    <HBox spacing="20" alignment="CENTER">
+        <!-- Sidebar -->
+        <VBox spacing="20" style="-fx-background-color: #cce7ff; -fx-padding: 20;" prefWidth="200">
+            <Label text="FocusManager" style="-fx-font-size: 20; -fx-text-fill: black;" />
+            <Button text="Dashboard" style="-fx-background-color: transparent; -fx-text-fill: black;" />
+            <Button text="Reports" style="-fx-background-color: transparent; -fx-text-fill: black;" />
+            <Button text="Settings" style="-fx-background-color: transparent; -fx-text-fill: black;" />
+            <Button text="Help" style="-fx-background-color: transparent; -fx-text-fill: black;" />
+        </VBox>
+
+        <!-- Pie Chart -->
+        <VBox spacing="10" alignment="CENTER">
+            <PieChart fx:id="pieChart" />
+            <Label fx:id="totalTime" style="-fx-font-size: 24;" />
+        </VBox>
+
+        <!-- Productivity Section -->
+        <VBox spacing="10" style="-fx-background-color: #f8f8ff; -fx-padding: 10;">
+            <Label text="Productive" style="-fx-font-size: 16;" />
+            <Label fx:id="productiveTime" />
+            <Label fx:id="productivePercent" />
+            <Label text="UnProductive" style="-fx-font-size: 16;" />
+            <Label fx:id="unproductiveTime" />
+            <Label fx:id="unproductivePercent" />
+        </VBox>
+
+        <!-- App Usage Lists -->
+        <VBox spacing="10" style="-fx-background-color: #f0f8ff; -fx-border-color: gray; -fx-padding: 10;">
+            <Label text="Productive App usage" />
+            <ListView fx:id="productiveApps" />
+            <Label text="UnProductive App usage" />
+            <ListView fx:id="unproductiveApps" />
+        </VBox>
+    </HBox>
+</VBox>
