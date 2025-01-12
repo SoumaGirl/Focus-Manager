@@ -11,6 +11,4 @@ module com {
     opens com.focus.view to javafx.fxml;
     opens com.focus.controllers to javafx.fxml;
 
-    
-    
 }
