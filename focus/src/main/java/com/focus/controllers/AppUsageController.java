@@ -1,7 +1,6 @@
 package com.focus.controllers;
 
 
-
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;

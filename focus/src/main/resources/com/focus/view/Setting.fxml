@@ -13,10 +13,10 @@
             <Region HBox.hgrow="ALWAYS"/>
         </HBox>
     </top>
+    
     <!-- Left Sidebar -->
     <left>
         <VBox spacing="10" style="-fx-background-color: #b3cbe4; -fx-padding: 10;">
-            
             <Button fx:id="homebutton" text="🏠 Home" style="-fx-font-size: 25px; -fx-background-color: transparent;" onAction="#handleHomeButton"/>
             <Button fx:id="rapportButton" text="📊 Rapport" style="-fx-font-size: 25px; -fx-background-color: transparent;" onAction="#handleRapportButton"/>
             <Button fx:id="sesionButton" text="⏰ Session" style="-fx-font-size: 25px; -fx-background-color: transparent;" onAction="#handleSessionButton"/>
@@ -31,9 +31,6 @@
 
             <!-- Settings -->
             <VBox spacing="40">
-                <!-- Start Break Automatically -->
-                
-
                 <!-- Alarm Sound -->
                 <HBox spacing="10" alignment="CENTER_LEFT">
                     <Label text="Son de l’Alarme" style="-fx-font-size: 24px;"/>
@@ -69,6 +66,14 @@
                     <ComboBox fx:id="longBreakComboBox" prefWidth="150"/>
                 </HBox>
             </VBox>
+
+            <!-- Save Button -->
+            <HBox spacing="20" alignment="CENTER">
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Save Settings" style="-fx-font-size: 20px; -fx-background-color: #4CAF50; -fx-text-fill: white;" onAction="#handleSaveSettingsButton"/>
+                <Region HBox.hgrow="ALWAYS"/>
+            </HBox>
+
         </VBox>
     </center>
 </BorderPane>

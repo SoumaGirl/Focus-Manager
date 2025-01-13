@@ -24,8 +24,7 @@
         <Button text="Sign In" fx:id="signInButton" layoutX="250" layoutY="250" onAction="#handleSignInClick" prefWidth="100" />
 
         <!-- Forget password and Sign Up Links -->
-        <Text text="Forget password?" layoutX="100" layoutY="300" style="-fx-font-size: 12; -fx-fill: blue; cursor: hand;" />
-        <Text text="Don't have an account? Sign Up" layoutX="100" layoutY="340" style="-fx-font-size: 12; -fx-fill: blue; cursor: hand;" />
+        <Text text="Don't have an account? Sign Up" layoutX="100" layoutY="340" style="-fx-font-size: 12; -fx-fill: blue; cursor: hand;" fx:id="signUpText" />
 
         
     </children>

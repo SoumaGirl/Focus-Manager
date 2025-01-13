@@ -29,7 +29,7 @@
 
         <!-- Forget password and Sign Up Links -->
 
-        <Text text="Already have an account? Sign in" layoutX="100" layoutY="340" style="-fx-font-size: 12; -fx-fill: blue; cursor: hand;" />
+        <Text text="Already have an account? Sign in" layoutX="100" layoutY="340" style="-fx-font-size: 12; -fx-fill: blue; cursor: hand;" onMouseClicked="#handleSignInRedirect" />
 
         
     </children>
