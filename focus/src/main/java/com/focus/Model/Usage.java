@@ -1,18 +1,25 @@
 package com.focus.Model;
 
 public class Usage {
+    private int id;
     private String appName;
-    private int usageTime; // Temps d'utilisation en minutes
-    private boolean isProductive;
+    private int usageTime; // In seconds or minutes, as preferred.
 
-    // Constructeurs
-    public Usage(String appName, int usageTime, boolean isProductive) {
+    public Usage(int id, String appName, int usageTime) {
+        this.id = id;
         this.appName = appName;
         this.usageTime = usageTime;
-        this.isProductive = isProductive;
     }
 
-    // Getters et Setters
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getAppName() {
         return appName;
     }
@@ -29,11 +36,8 @@ public class Usage {
         this.usageTime = usageTime;
     }
 
-    public boolean isProductive() {
-        return isProductive;
-    }
-
-    public void setProductive(boolean productive) {
-        isProductive = productive;
+    @Override
+    public String toString() {
+        return "Usage{id=" + id + ", appName='" + appName + "', usageTime=" + usageTime + '}';
     }
 }

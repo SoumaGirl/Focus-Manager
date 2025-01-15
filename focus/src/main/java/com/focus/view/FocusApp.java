@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class FocusApp extends Application {
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         // Load the FXML file
@@ -17,9 +16,9 @@ public class FocusApp extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        Stage stage = primaryStage;
-        stage.setMinWidth(1024);  // Minimum width
-        stage.setMinHeight(768); // Minimum height
+        // Set the minimum size for the window to ensure it's resizable but not too small
+        primaryStage.setMinWidth(800);
+        primaryStage.setMinHeight(600);
     }
 
     public static void main(String[] args) {

@@ -13,9 +13,10 @@ public class Setting extends Application {
         primaryStage.setTitle("Setting");
         primaryStage.setScene(scene);
         primaryStage.show();
-        Stage stage = primaryStage;
-        stage.setMinWidth(1024);  // Minimum width
-        stage.setMinHeight(768); // Minimum height
+
+        // Set the minimum size for the window to ensure it's resizable but not too small
+        primaryStage.setMinWidth(800);
+        primaryStage.setMinHeight(600);
     }
 
     public static void main(String[] args) {

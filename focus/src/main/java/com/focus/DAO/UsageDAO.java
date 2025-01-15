@@ -8,78 +8,57 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UsageDAO {
-    private Connection connection;
 
-    public UsageDAO() throws SQLException {
-        this.connection = Database.getConnection();
+    public void saveUsage(Usage usage) throws SQLException {
+        String query = "INSERT INTO usages (app_name, usage_time) VALUES (?, ?)";
+        try (Connection connection = Database.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, usage.getAppName());
+            statement.setInt(2, usage.getUsageTime());
+            statement.executeUpdate();
+        }
     }
 
-    // Récupérer toutes les applications et leur temps d'utilisation
-    public List<Usage> getAllUsages() throws SQLException {
-        List<Usage> usages = new ArrayList<>();
-        String sql = "SELECT app_name, usage_time, is_productive FROM app_usage";
-        PreparedStatement stmt = connection.prepareStatement(sql);
-        ResultSet rs = stmt.executeQuery();
+    public List<Usage> getAllUsage() throws SQLException {
+        String query = "SELECT * FROM usages";
+        List<Usage> usageList = new ArrayList<>();
 
-        while (rs.next()) {
-            Usage usage = new Usage(
-                rs.getString("app_name"),
-                rs.getInt("usage_time"),
-                rs.getBoolean("is_productive")
-            );
-            usages.add(usage);
+        try (Connection connection = Database.getConnection();
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String appName = resultSet.getString("app_name");
+                int usageTime = resultSet.getInt("usage_time");
+                usageList.add(new Usage(id, appName, usageTime));
+            }
         }
-        return usages;
+        return usageList;
     }
 
-    // Récupérer le temps total d'utilisation
-    public int getTotalTime() throws SQLException {
-        String sql = "SELECT SUM(usage_time) AS total_time FROM app_usage";
-        PreparedStatement stmt = connection.prepareStatement(sql);
-        ResultSet rs = stmt.executeQuery();
-
-        if (rs.next()) {
-            return rs.getInt("total_time");
+    // Method to get a usage entry by app name
+    public Usage getUsageByAppName(String appName) throws SQLException {
+        String query = "SELECT * FROM usages WHERE app_name = ?"; // Fixed table and column names
+        try (Connection connection = Database.getConnection();
+             PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setString(1, appName);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return new Usage(rs.getInt("id"), rs.getString("app_name"), rs.getInt("usage_time"));
+            }
         }
-        return 0;
+        return null;
     }
 
-    // Récupérer le temps productif
-    public int getProductiveTime() throws SQLException {
-        String sql = "SELECT SUM(usage_time) AS productive_time FROM app_usage WHERE is_productive = TRUE";
-        PreparedStatement stmt = connection.prepareStatement(sql);
-        ResultSet rs = stmt.executeQuery();
-
-        if (rs.next()) {
-            return rs.getInt("productive_time");
+    // Method to update an existing usage entry
+    public void updateUsage(Usage usage) throws SQLException {
+        String query = "UPDATE usages SET usage_time = ? WHERE id = ?";
+        try (Connection connection = Database.getConnection();
+             PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, usage.getUsageTime());
+            stmt.setInt(2, usage.getId());
+            stmt.executeUpdate();
         }
-        return 0;
-    }
-
-    // Récupérer les applications productives
-    public List<String> getProductiveApps() throws SQLException {
-        List<String> productiveApps = new ArrayList<>();
-        String sql = "SELECT app_name FROM app_usage WHERE is_productive = TRUE";
-        PreparedStatement stmt = connection.prepareStatement(sql);
-        ResultSet rs = stmt.executeQuery();
-
-        while (rs.next()) {
-            productiveApps.add(rs.getString("app_name"));
-        }
-        return productiveApps;
-    }
-
-    // Récupérer les applications non-productives
-    public List<String> getUnproductiveApps() throws SQLException {
-        List<String> unproductiveApps = new ArrayList<>();
-        String sql = "SELECT app_name FROM app_usage WHERE is_productive = FALSE";
-        PreparedStatement stmt = connection.prepareStatement(sql);
-        ResultSet rs = stmt.executeQuery();
-
-        while (rs.next()) {
-            unproductiveApps.add(rs.getString("app_name"));
-        }
-        return unproductiveApps;
     }
 }
-

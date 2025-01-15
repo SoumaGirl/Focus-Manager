@@ -13,6 +13,10 @@ public class FocusManager extends Application {
         primaryStage.setTitle("FocusManager");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+
+        // Set the minimum size for the window to ensure it's resizable but not too small
+        primaryStage.setMinWidth(800);
+        primaryStage.setMinHeight(600);
     }
 
     public static void main(String[] args) {

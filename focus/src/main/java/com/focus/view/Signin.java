@@ -17,6 +17,10 @@ public class Signin extends Application {
         primaryStage.setTitle("Sign In");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        // Set the minimum size for the window to ensure it's resizable but not too small
+        primaryStage.setMinWidth(800);
+        primaryStage.setMinHeight(600);
     }
 
     public static void main(String[] args) {

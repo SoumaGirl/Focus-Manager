@@ -7,47 +7,33 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.focus.controllers.AppUsageController" spacing="10">
-    <!-- Header -->
-    <HBox spacing="10" style="-fx-background-color: #f0f8ff; -fx-padding: 10;" alignment="CENTER_LEFT">
-        <Label text="Nov 01 - Nov 18" style="-fx-font-size: 16;" />
-        <Button text="Apps" style="-fx-background-color: #add8e6; -fx-text-fill: black;" />
-        <Region fx:id="spacer" HBox.hgrow="ALWAYS" />
-        <Button text="Suivant" style="-fx-background-color: #008cba; -fx-text-fill: white;" />
+    <!-- Top Section -->
+    <HBox spacing="20" style="-fx-padding: 10; -fx-background-color: #dce1f2;">
+        <Label text="Home" style="-fx-font-size: 25px; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
     </HBox>
 
-    <!-- Main Layout -->
-    <HBox spacing="20" alignment="CENTER">
-        <!-- Sidebar -->
-        <VBox spacing="20" style="-fx-background-color: #cce7ff; -fx-padding: 20;" prefWidth="200">
-            <Label text="FocusManager" style="-fx-font-size: 20; -fx-text-fill: black;" />
-            <Button text="Dashboard" style="-fx-background-color: transparent; -fx-text-fill: black;" />
-            <Button text="Reports" style="-fx-background-color: transparent; -fx-text-fill: black;" />
-            <Button text="Settings" style="-fx-background-color: transparent; -fx-text-fill: black;" />
-            <Button text="Help" style="-fx-background-color: transparent; -fx-text-fill: black;" />
+    <!-- Left Sidebar and Main Content -->
+    <HBox>
+        <VBox spacing="10" style="-fx-background-color: #b3cbe4; -fx-padding: 10;">
+            <Button fx:id="homebutton" text="🏠 Home" style="-fx-font-size: 25px; -fx-background-color: transparent;" onAction="#handleHomeButton"/>
+            <Button fx:id="rapportButton" text="📊 Rapport" style="-fx-font-size: 25px; -fx-background-color: transparent;" onAction="#handleRapportButton"/>
+            <Button fx:id="sesionButton" text="⏰ Session" style="-fx-font-size: 25px; -fx-background-color: transparent;" onAction="#handleSessionButton"/>
+            <Button fx:id="settingsButton" text="⚙ Settings" style="-fx-font-size: 25px; -fx-background-color: transparent;" onAction="#handleSettingsButton"/>
         </VBox>
 
-        <!-- Pie Chart -->
-        <VBox spacing="10" alignment="CENTER">
-            <PieChart fx:id="pieChart" />
-            <Label fx:id="totalTime" style="-fx-font-size: 24;" />
-        </VBox>
+        <!-- Pie Chart and App Usage Lists -->
+        <HBox spacing="20" alignment="CENTER">
+            <VBox spacing="10" alignment="CENTER">
+                <PieChart fx:id="pieChart"/>
+                <Label fx:id="totalTime" style="-fx-font-size: 24;"/>
+            </VBox>
 
-        <!-- Productivity Section -->
-        <VBox spacing="10" style="-fx-background-color: #f8f8ff; -fx-padding: 10;">
-            <Label text="Productive" style="-fx-font-size: 16;" />
-            <Label fx:id="productiveTime" />
-            <Label fx:id="productivePercent" />
-            <Label text="UnProductive" style="-fx-font-size: 16;" />
-            <Label fx:id="unproductiveTime" />
-            <Label fx:id="unproductivePercent" />
-        </VBox>
-
-        <!-- App Usage Lists -->
-        <VBox spacing="10" style="-fx-background-color: #f0f8ff; -fx-border-color: gray; -fx-padding: 10;">
-            <Label text="Productive App usage" />
-            <ListView fx:id="productiveApps" />
-            <Label text="UnProductive App usage" />
-            <ListView fx:id="unproductiveApps" />
-        </VBox>
+            <!-- App Usage Lists -->
+            <VBox spacing="10" style="-fx-background-color: #f0f8ff; -fx-border-color: gray; -fx-padding: 10;">
+                <Label text="Productive App usage"/>
+                <ListView fx:id="productiveApps"/>
+            </VBox>
+        </HBox>
     </HBox>
 </VBox>
