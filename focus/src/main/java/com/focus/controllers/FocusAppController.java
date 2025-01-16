@@ -2,6 +2,8 @@ package com.focus.controllers;
 
 import com.focus.DAO.PomodoroDAO;
 import com.focus.Model.Pomodoro;
+import com.focus.Service.AppTrackerService;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
@@ -17,6 +19,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.ScheduledExecutorService;
 
 public class FocusAppController {
 
@@ -38,6 +41,9 @@ public class FocusAppController {
     public Button startButton;
     @FXML
     public Button stopButton;
+
+    private AppTrackerService appTrackerService;
+    private ScheduledExecutorService scheduler;
 
     private Timeline timeline;
     private int secondsElapsed = 0;
@@ -121,7 +127,6 @@ public class FocusAppController {
             e.printStackTrace();
         }
     }
-    
 
     private String formatTime(int totalSeconds) {
         int minutes = totalSeconds / 60;

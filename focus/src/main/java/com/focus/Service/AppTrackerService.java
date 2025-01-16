@@ -86,35 +86,38 @@ public class AppTrackerService {
             // Browsers and Communication Apps
             "chrome.exe", "firefox.exe", "edge.exe", "opera.exe", "brave.exe",
             "discord.exe", "skype.exe", "teams.exe", "zoom.exe", "telegram.exe", "outlook.exe",
-        
+            
             // Development Tools
-            "androidstudio.exe", "intellij.exe", "idea.exe", "eclipse.exe", "vscode.exe",
+            "androidstudio.exe", "intellij.exe", "idea.exe", "eclipse.exe", "vscode.exe", 
             "visualstudio.exe", "netbeans.exe", "pycharm.exe", "gns3.exe", "mysqlworkbench.exe",
             "postman.exe", "xampp.exe", "git.exe", "githubdesktop.exe", "docker.exe",
-        
+            
             // Programming and Runtime
             "java.exe", "python.exe", "node.exe", "ruby.exe", "perl.exe", "go.exe",
             "javac.exe", "javap.exe", "javapackager.exe",
-        
+            
             // Productivity Tools
             "word.exe", "excel.exe", "powerpoint.exe", "onenote.exe",
             "notepad.exe", "notepad++.exe", "snippingtool.exe", "paint.exe",
-            "adobeacrobat.exe", "foxitreader.exe",
-        
+            "adobeacrobat.exe", "foxitreader.exe", "explorer.exe", // "explorer.exe" represents "folder"
+            
             // Media and Entertainment
             "spotify.exe", "vlc.exe", "winamp.exe", "media.exe", "obs.exe",
-        
+            "photoshop.exe", "gimp.exe", "lightroom.exe", "adobeillustrator.exe", "blender.exe",
+            
             // Security
             "malwarebytes.exe", "windowsdefender.exe", "antivirus.exe", "firewall.exe",
             "nmap.exe", "wireshark.exe", "openvpn.exe",
-        
+            
             // System and Utilities
             "cmd.exe", "powershell.exe", "taskmanager.exe", "hyperv.exe", "vmware.exe", "virtualbox.exe",
             "7zfm.exe", "winrar.exe", "speedtest.exe", "putty.exe", "routerconfig.exe",
-        
+            
             // Miscellaneous
-            "torrent.exe", "utorrent.exe", "protonvpn.exe", "vpn.exe"
+            "torrent.exe", "utorrent.exe", "protonvpn.exe", "vpn.exe", "dropbox.exe", "onedrive.exe",
+            "googlebackupandsync.exe", "evernote.exe", "trello.exe", "slack.exe", "notion.exe", "kodi.exe"
         };
+        
         
 
         for (String app : userApplications) {

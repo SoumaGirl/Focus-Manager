@@ -1,14 +1,19 @@
-# Utilisation d'une image Java
+# Use OpenJDK 17 as the base image
 FROM openjdk:17-jdk-slim
 
-# Définir le répertoire de travail
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copier les fichiers du projet dans le conteneur
-COPY . /app
+# Install dependencies required for JavaFX (for GUI support)
+RUN apt-get update && apt-get install -y \
+    libgl1-mesa-glx \
+    libxi6 \
+    libxrender1 \
+    libxrandr2 \
+    libasound2
 
-# Compiler le projet
-RUN javac src/main/*.java
+# Copy the generated .jar file from the target directory to the container
+COPY target/Focus_Manager-1.0-SNAPSHOT.jar focus.jar
 
-# Commande pour exécuter l'application
-CMD ["java", "-cp", "src/main", "main.App"]
+# Set the default command to run your JavaFX app
+ENTRYPOINT ["java", "-jar", "focus.jar"]
