@@ -38,3 +38,5 @@ FocusManager is a desktop application designed to boost productivity by helping 
     JavaFX SDK: Ensure JavaFX is configured in your environment.
     Docker: For MySQL database setup (optional).
 <br>
+"# poo-projet" 
+"# poo-projet" 
